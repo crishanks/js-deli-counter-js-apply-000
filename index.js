@@ -10,11 +10,16 @@ function nowServing(katzDeliLine) {
   if (katzDeliLine.length === 0) {
     return 'There is nobody waiting to be served!';
   } else {
-    result = `Currently serving ${katzDeliLine[0]}.`;
-    katzDeliLine = katzDeliLine.splice(0, 1);
+    while (katzDeliLine.length > 0) {
+      result = `Currently serving ${katzDeliLine[0]}.`;
+      katzDeliLine = katzDeliLine.splice(0, 1);
+      console.log("Hello!")
+    }
   }
   return result;
 }
+
+console.log(nowServing(["Laura", "matt", "john"]))
 
 function currentLine(lineOfPeople) {
   let result = 'The line is currently: ';
